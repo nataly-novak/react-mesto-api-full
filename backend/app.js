@@ -20,7 +20,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 const allowedCors = [
   'https://praktikum.tk',
   'http://praktikum.tk',
-  'http://localhost:3001',
+  'http://mesto.novak.nomoredomains.club/',
 ];
 
 app.use((req, res, next) => {
