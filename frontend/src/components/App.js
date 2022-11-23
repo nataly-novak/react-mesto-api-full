@@ -101,7 +101,6 @@ function App() {
         setLoggedIn(true);
         history.push("/");
         setUserEmail(data.data.email);
-        setToken(jwt);
       })
       .catch((err) => console.log(err));
     }
