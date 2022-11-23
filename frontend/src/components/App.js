@@ -39,6 +39,7 @@ function App() {
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [headerLink, setHeaderLink] = React.useState();
   const [userEmail, setUserEmail] = React.useState("");
+  const [token, setToken] = React.useState("");
   const history = useHistory();
 
   React.useEffect(() => {
@@ -100,6 +101,7 @@ function App() {
         setLoggedIn(true);
         history.push("/");
         setUserEmail(data.data.email);
+        setToken(jwt);
       })
       .catch((err) => console.log(err));
     }
@@ -202,6 +204,8 @@ function App() {
         headerLink: headerLink,
         setUserEmail: setUserEmail,
         userEmail: userEmail,
+        token: token,
+        setToken: setToken,
       }}
     >
       <div className="body page">

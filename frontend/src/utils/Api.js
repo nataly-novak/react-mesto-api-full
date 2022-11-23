@@ -1,4 +1,7 @@
+import { CurrentUserContext } from "../context/CurrentUserContext.js";
+
 export class Api {
+  static contextType = CurrentUserContext;
   constructor({ baseUrl, headers }) {
     this._baseURL = baseUrl;
     this._headers = headers;
@@ -79,9 +82,9 @@ export class Api {
   }
 }
 const api = new Api({
-  baseUrl: "https://mesto.nomoreparties.co/v1/cohort-48",
+  baseUrl: "https://api.mesto.novak.nomoredomains.club",
   headers: {
-    authorization: "6492d287-6bce-4552-8b4d-86cc57d9f89d",
+    authorization: this.context.token,
     "Content-Type": "application/json",
   },
 });
