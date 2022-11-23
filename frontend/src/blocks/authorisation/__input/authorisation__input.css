@@ -1,0 +1,21 @@
+.authorisation__input{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid rgb(#CCCCCC);
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+  color: white;
+  font-weight: 400;
+  font-size: 14px;
+  background-color: black;
+  padding: 0 0 13px 0;
+  max-height: 27px;
+  margin: 0 0 5px 0;
+
+
+}
+
+.authorisation__input::placeholder {
+  color: #CCCCCC;
+}

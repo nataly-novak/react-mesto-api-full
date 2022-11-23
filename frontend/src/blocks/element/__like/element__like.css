@@ -1,0 +1,21 @@
+.element__like{
+  background-image: url(../../../images/like-heart.svg);
+  background-color: inherit;
+  background-size: contain;
+  height: 19px;
+  min-width: 22px;
+  border: none;
+  background-repeat: no-repeat;
+  margin:0 0 3px 0;
+  padding:0;
+}
+
+.element__like:hover{
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.element__like:active{
+  background-image: url(../../../images/like-heart-active.svg);
+  opacity: 100%;
+}

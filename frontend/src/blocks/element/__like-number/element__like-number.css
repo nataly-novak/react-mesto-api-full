@@ -1,0 +1,9 @@
+.element__like-number{
+  font-size: 13px;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  color: black;
+  margin:0;
+  padding:0;
+  text-align: center;
+}

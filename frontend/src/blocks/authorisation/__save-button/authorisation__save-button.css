@@ -1,0 +1,27 @@
+.authorisation__save-button{
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+    font-family: "Inter", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    padding:0;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    min-height: 50px;
+    border: none;
+    border-radius: 2px;
+
+  }
+
+  @media screen and (max-width: 767px){
+    .authorisation__save-button{
+      min-height: 46px;
+    }
+  }
+
+  .authorisation__save-button:hover{
+    opacity: 80%;
+    cursor: pointer;
+}

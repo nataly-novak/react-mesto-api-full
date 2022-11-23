@@ -1,0 +1,8 @@
+.popup__container-image{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0,0,0,0);
+  max-width: 75vw;
+  max-height: 75vh;
+}
