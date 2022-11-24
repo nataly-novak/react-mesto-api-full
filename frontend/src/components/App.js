@@ -196,7 +196,7 @@ function App() {
   function handleLogin() {
     setLoggedIn(true);
   }
-
+  console.log(token)
   return (
     <CurrentUserContext.Provider
       value={{
