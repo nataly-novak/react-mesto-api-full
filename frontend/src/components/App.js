@@ -102,7 +102,7 @@ function App() {
         console.log(data)
         setLoggedIn(true);
         history.push("/");
-        setUserEmail(data.data.email);
+        setUserEmail(data.email);
       })
       .catch((err) => console.log(err));
     }
