@@ -99,6 +99,7 @@ function App() {
       const jwt = localStorage.getItem("jwt");
       api.setToken(jwt)
       getContent(jwt).then((data) => {
+        console.log(data)
         setLoggedIn(true);
         history.push("/");
         setUserEmail(data.data.email);
