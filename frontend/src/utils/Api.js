@@ -5,7 +5,10 @@ export class Api {
     this._token = "6492d287-6bce-4552-8b4d-86cc57d9f89d"
   }
   setToken(token){
-    this._token = token
+    if (token){
+      this._token = token
+    }
+    
     console.log(this._token)
   }
   _getResponseData(res) {
