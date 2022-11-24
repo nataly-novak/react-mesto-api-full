@@ -131,6 +131,11 @@ function App() {
       })
       .catch((err) => console.log(err));
   }
+  function signOut() {
+    localStorage.removeItem("jwt");
+    history.push("/sign-in");
+    setLoggedIn(false);
+  }
 
   function handleCardClick(card) {
     setSelectedCard({ name: card.name, link: card.link });
@@ -233,6 +238,7 @@ function App() {
             onCardClick={handleCardClick}
             handleCardLike={handleCardLike}
             handleCardDelete={handleCardDelete}
+            signOut= {signOut}
             cards={cards}
           />
         </Switch>
