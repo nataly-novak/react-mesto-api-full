@@ -47,6 +47,7 @@ function App() {
     Promise.all(apiPromises)
       .then(([userInfo, initialCards]) => {
         setCurrentUser(userInfo);
+        console.log(currentUser)
         setCards([...initialCards]);
       })
       .catch((err) => console.log(err));
