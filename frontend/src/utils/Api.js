@@ -7,7 +7,7 @@ export class Api {
     this._headers = headers;
     this._token = "6492d287-6bce-4552-8b4d-86cc57d9f89d"
   }
-  set_token(token){
+  setToken(token){
     this._token = token
     console.log(this._token)
   }
