@@ -50,7 +50,7 @@ function App() {
         setCards([...initialCards]);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [loggedIn]);
 
   function handleAuthorization( password, email){
     authorize(password, email)
