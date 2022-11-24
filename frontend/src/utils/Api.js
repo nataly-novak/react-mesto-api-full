@@ -2,14 +2,12 @@ export class Api {
   constructor({ baseUrl, headers }) {
     this._baseURL = baseUrl;
     this._headers = headers;
-    this._token = "6492d287-6bce-4552-8b4d-86cc57d9f89d"
   }
   setToken(token){
     if (token){
-      this._token = token
+      this._headers.authorisation = token
     }
-    
-    console.log(this._token)
+    console.log(this._headers)
   }
   _getResponseData(res) {
     if (!res.ok) {
@@ -89,7 +87,7 @@ export class Api {
 const api = new Api({
   baseUrl: "http://api.mesto.novak.nomoredomains.club",
   headers: {
-    authorization: this._token,
+    authorization: "6492d287-6bce-4552-8b4d-86cc57d9f89d",
     "Content-Type": "application/json",
   }
 });
