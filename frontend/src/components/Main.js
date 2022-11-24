@@ -10,16 +10,13 @@ function Main(props) {
   const setHeaderLink = React.useContext(CurrentUserContext).setHeaderLink;
   const userEmail = React.useContext(CurrentUserContext).userEmail;
   const history = useHistory();
-  function signOut() {
-    localStorage.removeItem("jwt");
-    history.push("/sign-in");
-  }
+
 
   function HeaderLink() {
     return (
       <div className="header__container">
         <p className="header__email">{userEmail}</p>
-        <button className="header__button" onClick={signOut}>
+        <button className="header__button" onClick={props.signOut}>
           Выйти
         </button>
       </div>
