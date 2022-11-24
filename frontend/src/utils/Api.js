@@ -82,7 +82,7 @@ export class Api {
   }
 }
 const api = new Api({
-  baseUrl: "https://mesto.nomoreparties.co/v1/cohort-48",
+  baseUrl: "http://api.mesto.novak.nomoredomains.club",
   headers: {
     authorization: this.context.token,
     "Content-Type": "application/json",
