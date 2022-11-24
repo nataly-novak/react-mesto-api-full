@@ -61,7 +61,7 @@ function App() {
           localStorage.setItem("jwt", res.token);
           handleLogin()
           setUserEmail(email)
-         // api.setToken(res.token)
+          api.setToken(res.token)
           history.push("/")
         }
       }
