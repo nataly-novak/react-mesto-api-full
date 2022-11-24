@@ -39,7 +39,6 @@ function App() {
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [headerLink, setHeaderLink] = React.useState();
   const [userEmail, setUserEmail] = React.useState("");
-  const [token, setToken] = React.useState("6492d287-6bce-4552-8b4d-86cc57d9f89d");
   const history = useHistory();
 
   React.useEffect(() => {
@@ -62,8 +61,7 @@ function App() {
           localStorage.setItem("jwt", res.token);
           handleLogin()
           setUserEmail(email)
-          setToken(res.token)
-          console.log(token)
+          api.setToken(res.token)
           history.push("/")
         }
       }
@@ -196,7 +194,7 @@ function App() {
   function handleLogin() {
     setLoggedIn(true);
   }
-  console.log(token)
+
   return (
     <CurrentUserContext.Provider
       value={{
@@ -205,8 +203,6 @@ function App() {
         headerLink: headerLink,
         setUserEmail: setUserEmail,
         userEmail: userEmail,
-        token: token,
-        setToken: setToken,
       }}
     >
       <div className="body page">

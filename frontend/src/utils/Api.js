@@ -5,7 +5,11 @@ export class Api {
   constructor({ baseUrl, headers }) {
     this._baseURL = baseUrl;
     this._headers = headers;
-    console.log(this.context.token)
+    this._token = "6492d287-6bce-4552-8b4d-86cc57d9f89d"
+  }
+  set_token(token){
+    this._token = token
+    console.log(this._token)
   }
   _getResponseData(res) {
     if (!res.ok) {
