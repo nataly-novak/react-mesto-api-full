@@ -5,7 +5,7 @@ export class Api {
   }
   setToken(token){
     if (token){
-      this._headers.authorisation = token
+      this._headers.authorization = token
     }
     console.log(this._headers)
   }
