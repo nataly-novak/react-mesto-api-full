@@ -1,7 +1,4 @@
-import { CurrentUserContext } from "../context/CurrentUserContext.js";
-
 export class Api {
-  static contextType = CurrentUserContext;
   constructor({ baseUrl, headers }) {
     this._baseURL = baseUrl;
     this._headers = headers;
