@@ -39,7 +39,7 @@ function App() {
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [headerLink, setHeaderLink] = React.useState();
   const [userEmail, setUserEmail] = React.useState("");
-  const [token, setToken] = React.useState("");
+  const [token, setToken] = React.useState("6492d287-6bce-4552-8b4d-86cc57d9f89d");
   const history = useHistory();
 
   React.useEffect(() => {
@@ -62,6 +62,8 @@ function App() {
           localStorage.setItem("jwt", res.token);
           handleLogin()
           setUserEmail(email)
+          setToken(res.token)
+          console.log(token)
           history.push("/")
         }
       }
