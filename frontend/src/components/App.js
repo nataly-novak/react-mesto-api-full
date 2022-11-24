@@ -50,7 +50,7 @@ function App() {
         setCards([...initialCards]);
       })
       .catch((err) => console.log(err));
-  }, [loggedIn, tokenCheck]);
+  }, []);
 
   function handleAuthorization( password, email){
     authorize(password, email)
@@ -97,6 +97,7 @@ function App() {
     // эта функция проверит, действующий он или нет
     if (localStorage.getItem("jwt")) {
       const jwt = localStorage.getItem("jwt");
+      api.setToken(jwt)
       getContent(jwt).then((data) => {
         setLoggedIn(true);
         history.push("/");
