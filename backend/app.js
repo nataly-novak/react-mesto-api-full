@@ -19,7 +19,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 const allowedCors = [
   'https://praktikum.tk',
   'http://praktikum.tk',
-  'http://mesto.novak.nomoredomains.club/*',
+  'http://mesto.novak.nomoredomains.club',
 ];
 app.use((req, res, next) => {
   const { origin } = req.headers; // Сохраняем источник запроса в переменную origin
@@ -30,6 +30,7 @@ app.use((req, res, next) => {
 
   // проверяем, что источник запроса есть среди разрешённых
   if (allowedCors.includes(origin)) {
+    console.log()
     res.header('Access-Control-Allow-Origin', origin);
   }
   // Если это предварительный запрос, добавляем нужные заголовки
