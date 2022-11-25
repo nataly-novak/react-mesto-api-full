@@ -3,11 +3,11 @@ const Card = require('../models/card');
 const NotFoundError = require('../errors/NotFoundError');
 const ValidationError = require('../errors/ValidationError');
 const WrongUserError = require('../errors/WrongUserError');
+const { populate } = require('../models/user');
 
 module.exports.createCard = (req, res, next) => {
   const { name, link } = req.body;
   Card.create({ name, link, owner: req.user._id })
-    .populate('owner')
     .then((card) => res.send(card))
     .catch((err) => {
       if (err.name === 'ValidationError') { next(new ValidationError('Переданы некорректные данные в методы создания карточки')); }
@@ -16,7 +16,6 @@ module.exports.createCard = (req, res, next) => {
 };
 module.exports.getCards = (req, res, next) => {
   Card.find({})
-    .populate('owner')
     .then((cards) => res.send(cards))
     .catch(next);
 };
@@ -30,7 +29,7 @@ module.exports.deleteCard = (req, res, next) => {
       return card;
     })
     .then((card) => {
-      if (String(card.owner._id) !== String(req.user._id)) {
+      if (String(card.owner) !== String(req.user._id)) {
         throw (new WrongUserError('Нет Доступа'));
       }
       return card.remove();
@@ -49,7 +48,6 @@ module.exports.likeCard = (req, res, next) => {
     { $addToSet: { likes: req.user._id } }, // добавить _id в массив, если его там нет
     { new: true },
   )
-    .populate('owner')
     .then((card) => {
       if (card != null) { res.send(card); }
       throw (new NotFoundError('Карточка не найдена'));
@@ -66,7 +64,6 @@ module.exports.dislikeCard = (req, res, next) => {
     { $pull: { likes: req.user._id } }, // убрать _id из массива
     { new: true },
   )
-    .populate('owner')
     .then((card) => {
       if (card != null) { res.send(card); }
       throw new NotFoundError('Карточка не найдена');
