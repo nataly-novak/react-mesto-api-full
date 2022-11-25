@@ -8,7 +8,7 @@ function Card(props) {
 
   const isOwn = props.card.owner === currentUser._id;
   const isLiked = props.card.likes.some((i) => i === currentUser._id);
-  console.log(isOwn)
+  console.log(isOwn, props.card.owner, currentUser._id)
 
   // Создаём переменную, которую после зададим в `className` для кнопки удаления
   const cardDeleteButtonClassName = `element__trash ${
