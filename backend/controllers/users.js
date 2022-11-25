@@ -6,6 +6,8 @@ const NotFoundError = require('../errors/NotFoundError');
 const ValidationError = require('../errors/ValidationError');
 const ExistingUserError = require('../errors/ExistingUserError');
 
+const { NODE_ENV, JWT_SECRET } = process.env;
+
 module.exports.getUser = (req, res, next) => {
   User.findById(req.params.userId)
     .then((user) => {
@@ -100,7 +102,7 @@ module.exports.login = (req, res, next) => {
       res.send({
         token: jwt.sign(
           { _id: user._id },
-          'some-secret-key',
+          NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
           { expiresIn: '7d' },
         ),
       });
