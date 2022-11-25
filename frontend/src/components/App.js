@@ -115,6 +115,7 @@ function App() {
     api
       .handleLike(card._id, !isLiked)
       .then((newCard) => {
+        console.log(newCard)
         setCards((cards) =>
           cards.map((c) => (c._id, c._id === card._id ? newCard : c))
         );
