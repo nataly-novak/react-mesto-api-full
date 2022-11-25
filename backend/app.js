@@ -20,6 +20,7 @@ const allowedCors = [
   'https://praktikum.tk',
   'http://praktikum.tk',
   'http://mesto.novak.nomoredomains.club',
+  'https://mesto.novak.nomoredomains.club',
 ];
 app.use((req, res, next) => {
   const { origin } = req.headers; // Сохраняем источник запроса в переменную origin
@@ -30,7 +31,6 @@ app.use((req, res, next) => {
 
   // проверяем, что источник запроса есть среди разрешённых
   if (allowedCors.includes(origin)) {
-    console.log()
     res.header('Access-Control-Allow-Origin', origin);
   }
   // Если это предварительный запрос, добавляем нужные заголовки
@@ -44,6 +44,12 @@ app.use((req, res, next) => {
 });
 
 app.use(requestLogger); // подключаем логгер запросов
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 
 app.use('/signin', require('./routes/signin'));
 app.use('/signup', require('./routes/signup'));
