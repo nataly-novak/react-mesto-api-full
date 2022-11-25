@@ -3,6 +3,10 @@
   
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
+Репозиторий:
+
+https://github.com/nataly-novak/react-mesto-api-full
+
 IP 158.160.44.20
 
 Frontend https://mesto.novak.nomoredomains.club/
