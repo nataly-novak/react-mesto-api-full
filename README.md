@@ -4,5 +4,7 @@
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
 IP 158.160.44.20
+
 Frontend https://mesto.novak.nomoredomains.club/
+
 Backend https://api.mesto.novak.nomoredomains.club/
